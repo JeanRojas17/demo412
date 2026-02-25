@@ -10,7 +10,7 @@ public class Main {
         String saludo = persona1.hablar("Hola, ¿Como estas?");
         System.out.println(saludo);
 
-        persona1.dormir(8);
+        // persona1.dormir(8);
 
         int pasos = persona1.caminar(1000);
         System.out.println("La persona camina " +pasos+ " pasos.");

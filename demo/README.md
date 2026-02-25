@@ -60,21 +60,39 @@ La clase cuenta con 3 constructores sobrecargados:
 ## Diagrama de Clases UML (PlantUML)
 
 ```plantuml
-@startuml Persona
+@startuml Persona_Herencia
 class Persona {
     - cedula: int
     + nombre: String
     + correo: String
     - telefono: int
-    # cuentaBancoria: int
+    # cuentaBancaria: int
     
-    ~ Persona()
-    ~ Persona(cedula: int)
-    ~ Persona(cedula: int, nombre: String, correo: String, telefono: int)
+    + Persona()
+    + Persona(cedula: int)
+    + Persona(cedula: int, nombre: String, correo: String, telefono: int)
     + hablar(saludo: String): String
     - dormir(horas: int): void
     + caminar(pasos: int): int
 }
+
+class Docente {
+    + imparteMateria: String
+    
+    + Docente()
+    + calificar(materia: String): int
+}
+
+class Estudiante {
+    + estudiarMateria: String
+    
+    + Estudiante()
+    + entregar(): void
+    - revisarNota(materia: String): int
+}
+
+Persona <|-- Docente
+Persona <|-- Estudiante
 @enduml
 ```
 
@@ -96,4 +114,64 @@ class Persona {
     -dormir(int horas): void
     +caminar(int pasos): int
 }
+
+class Docente {
+    + imparteMateria: String
+    
+    + Docente()
+    + calificar(materia: String): int
+}
+
+class Estudiante {
+    + estudiarMateria: String
+    
+    + Estudiante()
+    + entregar(): void
+    - revisarNota(materia: String): int
+}
+
+Persona <|-- Docente
+Persona <|-- Estudiante
 ```
+
+# Ejercicio Clase - Programming II
+
+## Diagrama de Clases
+
+```mermaid
+classDiagram
+    class Persona {
+        - cedula: int
+        + nombre: String
+        + correo: String
+        - telefono: int
+        # cuentaBancaria: int
+        + Persona()
+        + Persona(cedula: int)
+        + Persona(cedula: int, nombre: String, correo: String, telefono: int)
+        + hablar(saludo: String) String
+        - dormir(horas: int) void
+        + caminar(pasos: int) int
+    }
+
+    class Docente {
+        + imparteMateria: String
+        + Docente()
+        + calificar(materia: String) int
+    }
+
+    class Estudiante {
+        + estudiarMateria: String
+        + Estudiante()
+        + entregar() void
+        - revisarNota(materia: String) int
+    }
+
+    Persona <|-- Docente
+    Persona <|-- Estudiante
+```
+
+## Descripción
+- **Persona**: Clase base con atributos y métodos comunes
+- **Docente**: Hereda de Persona, agrega funcionalidad de calificación
+- **Estudiante**: Hereda de Persona, agrega funcionalidad de entrega de tareas
