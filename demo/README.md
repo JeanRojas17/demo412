@@ -100,46 +100,6 @@ Persona <|-- Estudiante
 
 ```mermaid
 classDiagram
-class Persona {
-    -cedula: int
-    +nombre: String
-    +correo: String
-    -telefono: int
-    #cuentaBancoria: int
-    
-    Persona()
-    Persona(int cedula)
-    Persona(int cedula, String nombre, String correo, int telefono)
-    +hablar(String saludo): String
-    -dormir(int horas): void
-    +caminar(int pasos): int
-}
-
-class Docente {
-    + imparteMateria: String
-    
-    + Docente()
-    + calificar(materia: String): int
-}
-
-class Estudiante {
-    + estudiarMateria: String
-    
-    + Estudiante()
-    + entregar(): void
-    - revisarNota(materia: String): int
-}
-
-Persona <|-- Docente
-Persona <|-- Estudiante
-```
-
-# Ejercicio Clase - Programming II
-
-## Diagrama de Clases
-
-```mermaid
-classDiagram
     class Persona {
         - cedula: int
         + nombre: String
