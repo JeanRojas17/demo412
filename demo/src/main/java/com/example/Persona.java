@@ -2,12 +2,18 @@ package com.example;
 
 public class Persona {
 
+    // Modificadores de acceso: public, private, protected
+    // public (+): Puede ser accedido desde cualquier lugar
+    // private (-): Solo puede ser accedido desde la propia clase
+    // protected (#): Puede ser accedido desde la propia clase y desde las subclases
+
     // Atributos de la clase Persona
     //Caracteristicas que identifican a una persona
     private int cedula;
     public String nombre;
     public String correo;
     private int telefono;
+    protected int cuentaBancaria;
 
     // Constructor de la clase Persona
     // Constructor vacio
@@ -37,7 +43,7 @@ public class Persona {
         return saludo + " bien gracias!";
     }
 
-    public void dormir(int horas) {
+    private void dormir(int horas) {
         System.out.println("La persona duerme " +horas+ " horas.");
     }
 
